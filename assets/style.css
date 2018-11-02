@@ -1,0 +1,21 @@
+.title-bg{
+  background-image: linear-gradient(to right, black,red);
+}
+.doom-logo {
+  height: 10vh;
+}
+.title-bar {
+min-height: 10vh;
+justify-content:center;
+}
+.main-bg {
+  min-height: 75vh;
+  background-image:url("/assets/doomguy.gif");
+  background-size:cover;
+  background-position:center;
+}
+footer {
+  background-image: linear-gradient(to right, black, red);
+  min-height: 15vh;
+  justify-content: center;
+}
