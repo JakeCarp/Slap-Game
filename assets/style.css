@@ -25,4 +25,5 @@ span {
   background-image: url(/assets/doomguy.gif);
   background-size:cover;
   background-position: center;
+  z-index:1;
 }

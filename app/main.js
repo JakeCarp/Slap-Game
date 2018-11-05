@@ -29,16 +29,19 @@ function shootPistol() {
   cyberdemon.health -= 25 + addMods()
   cyberdemon.hits++
   update()
+  win()
 }
 function shootShotgun() {
   cyberdemon.health -= 75 + addMods()
   cyberdemon.hits++
   update()
+  win()
 }
 function shootBFG() {
   cyberdemon.health -= 300 + addMods()
   cyberdemon.hits++
   update()
+  win()
 }
 function update() {
   document.getElementById('health').innerHTML = `${cyberdemon.health}`
