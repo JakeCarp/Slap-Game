@@ -1,61 +1,52 @@
 
-// let monsters = [{
-//   name: 'Imp',
-//   dps: 10,
-//   health: 100,
-// },
-// {
-//   name: 'Hellknight',
-//   dps: 25,
-//   health: 200
-// }, {
-//   name: 'Cyberdemon',
-//   dps: 50,
-//   health: 500
-// }]
 let cyberdemon = {
   name: 'CyberDemon',
-  dps: 50,
-  health: 500
+  health: 500,
+  items: []
 }
-let doomGuy = {
-  name: 'Doom Guy',
-  health: 150,
-  armor: 50,
-  shottyAmmo: 10,
-  bfgAmmo: 2,
+let items = {
+  armor: { name: 'armor', modifier: -10 },
+  grenade: { name: 'grenade', modifier: 15 },
+  rage: { name: 'rage', modifier: 25 }
 }
-let alertElem = document.getElementById('alert')
-let alertTemplate = ''
-// function spawnMonster(level) {
-//   let monster = monsters[level]
-//   if (monster.health <= 0) {
-//     let monster = monsters[level++]
-//   }
-//   return monster
-// }
-function shootPistol(monster) {
-  cyberdemon.health - 25
-}
-function shootShotgun(monster) {
-  if (doomGuy.shottyAmmo > 0) {
-    cyberdemon.health - 75
-    doomGuy.shottyAmmo - 1
+function giveItem(num) {
+  if (num = 1) {
+    cyberdemon.items.push(items.armor)
+  } else if (num = 2) {
+    cyberdemon.items.push(items.grenade)
   } else {
-    alertTemplate = `
-    <h1>NO AMMO</h1>`
+    cyberdemon.items.push(items.rage)
   }
 }
-function shootBFG(monster) {
-  if (doomGuy.bfgAmmo > 0) {
-    cyberdemon.health - 300
-    doomGuy.bfgAmmo - 1
-  } else {
-    alertTemplate = `
-    <h1>NO AMMO</h1>`
+function addMods() {
+  let itemsTotal = 0
+  for (let i = 0; i < cyberdemon.items.length; i++) {
+    itemsTotal += cyberdemon.items[i].modifier
   }
+  return itemsTotal
+}
+function shootPistol() {
+  cyberdemon.health -= 25 + addMods()
+  cyberdemon.hits++
+  update()
+}
+function shootShotgun() {
+  cyberdemon.health -= 75 + addMods()
+  cyberdemon.hits++
+  update()
+}
+function shootBFG() {
+  cyberdemon.health -= 300 + addMods()
+  cyberdemon.hits++
+  update()
 }
 function update() {
-
+  document.getElementById('health').innerHTML = `${cyberdemon.health}`
 }
-alertElem.innerHTML = alertTemplate
+function win() {
+  if (cyberdemon.health <= 0) {
+    document.getElementById('main-bg').innerHTML = `
+    <div id="win-bg"></div>`
+  }
+}
+update()

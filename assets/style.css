@@ -10,12 +10,19 @@ justify-content:center;
 }
 .main-bg {
   min-height: 75vh;
-  background-image:url("/assets/doomguy.gif");
-  background-size:cover;
-  background-position:center;
+  background-color: black;
+  justify-content:space-between;
 }
 footer {
   background-image: linear-gradient(to right, black, red);
   min-height: 15vh;
   justify-content: center;
+}
+span {
+  color: white;
+}
+#win-bg {
+  background-image: url(/assets/doomguy.gif);
+  background-size:cover;
+  background-position: center;
 }

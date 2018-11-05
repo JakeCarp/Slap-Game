@@ -17,29 +17,29 @@
       <img src="assets/transparent-logo-doom-4.png" alt="Doom logo" class="doom-logo">
     </div>
   </header>
-  <main class="main-bg container-fluid">
-    <div class="main-btn">
-      <button class="continue" onclick="spawnMonster(0)">Give them Hell</button>
+  <main id="main-bg" class="main-bg container-fluid d-flex">
+    <div class="row">
+      <div class="col-12">
+        <div class="attack-buttons">
+          <button onclick="shootPistol()" class="btn btn-dark attack"> Pistol</button>
+          <button onclick="shootShotgun()" class="btn btn-dark attack">Super Shotgun</button>
+          <button onclick="shootBFG()" class="btn btn-dark attack">BFG 9000</button>
+        </div>
+        <div class="utility-buttons">
+          <button onclick="giveItem(1)" class="btn btn-dark utility">Armor</button>
+          <button onclick="giveItem(2)" class="btn btn-dark utility">Grenade</button>
+          <button onclick="giveItem(3)" class="btn btn-dark utility">Rage</button>
+        </div>
+        <span>Health: <span id="health"></span></span>
+      </div>
     </div>
-    <div class="attack-buttons">
-      <button onclick="shootPistol()" class="btn btn-dark attack"> Pistol</button>
-      <button onclick="shootShotgun()" class="btn btn-dark attack">Super Shotgun</button>
-      <button onclick="shootBFG()" class="btn btn-dark attack">BFG 9000</button>
+    <div class="enemy row">
+      <div class="col-12">
+        <img src="/assets/cybr1g.gif" alt="">
+      </div>
     </div>
-    <div class="utility-buttons">
-      <button class="btn btn-dark utility">Armor Pack</button>
-      <button class="btn btn-dark utility">Health Kit</button>
-      <button class="btn btn-dark utility">Rage</button>
-    </div>
-    <div id="alert"></div>
   </main>
   <footer class="container-fluid d-flex">
-    <h1 class="col-12">Add Some Music!</h1>
-    <div class="col-12">
-      <audio autoplay controls>
-        <source type="audio/mp3" src="/assets/DOOM (2016) OST - Rip  Tear.mp3">
-      </audio>
-    </div>
   </footer>
   <script src="app/main.js"></script>
 </body>
