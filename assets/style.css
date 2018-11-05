@@ -11,7 +11,6 @@ justify-content:center;
 .main-bg {
   min-height: 75vh;
   background-color: black;
-  justify-content:space-between;
 }
 footer {
   background-image: linear-gradient(to right, black, red);
@@ -26,4 +25,11 @@ span {
   background-size:cover;
   background-position: center;
   z-index:1;
+}
+.main-box{
+  justify-content: space-between;
+}
+.enemy-box {
+  margin-top: 10px;
+  justify-content: center;
 }
