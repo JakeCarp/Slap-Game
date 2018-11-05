@@ -48,8 +48,9 @@ function update() {
 }
 function win() {
   if (cyberdemon.health <= 0) {
-    document.getElementById('main-bg').innerHTML = `
-    <div id="win-bg"></div>`
+    document.getElementById('main-bg').style.backgroundImage = "url(/assets/doomguy.gif)";
+    document.getElementById('cyberdemon').innerHTML = `
+    <h1 class="content"> YOU WIN! </h1>`
   }
 }
 update()

@@ -11,20 +11,16 @@ justify-content:center;
 .main-bg {
   min-height: 75vh;
   background-color: black;
+  background-size:cover;
+  background-position: center;
 }
 footer {
   background-image: linear-gradient(to right, black, red);
   min-height: 15vh;
   justify-content: center;
 }
-span {
+.content {
   color: white;
-}
-#win-bg {
-  background-image: url(/assets/doomguy.gif);
-  background-size:cover;
-  background-position: center;
-  z-index:1;
 }
 .main-box{
   justify-content: space-between;
